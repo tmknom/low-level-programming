@@ -11,3 +11,6 @@ call: ## run call
 
 endian: ## run endian
 	$(call run,endian)
+
+strlen: ## run strlen
+	$(call run,strlen)
