@@ -6,7 +6,7 @@ SHELL=/bin/bash
 
 define run
     docker run -it --rm --cap-add=SYS_PTRACE --security-opt="seccomp=unconfined" -w /work -v $(PWD):/work gcc \
-    /bin/bash -c 'nasm -g -f elf64 -o ${1}.o ${1}.asm && ld ${1}.o && ./a.out'
+    /bin/bash -c 'rm -f ./a.out && nasm -f elf64 -o ${1}.o ${1}.asm && ld ${1}.o && ./a.out'
 endef
 
 # Phony Targets
